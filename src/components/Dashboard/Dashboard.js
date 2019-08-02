@@ -64,8 +64,8 @@ editExperience = (e, experience) => {
       <div className='dashboard'>
         <div className="jumbotron-container">
          <Jumbotron className='jumbotron'>
-          <h1 className="display-3"><i className="fas fa-city home-logo"></i> Welcome to AtoZ</h1>
-          <p className="lead">Explore the best AtoZ experiences in the world!</p>
+          <h1 className="display-3" id='header'><i className="fas fa-city home-logo"></i> Welcome to AtoZ</h1>
+          <p className="lead"  id='header-p'>Explore the best AtoZ experiences in the world!</p>
           <hr className="my-2"/>
 
           <div className='cta-box'>
@@ -106,8 +106,8 @@ editExperience = (e, experience) => {
           return (
             <div className="experiences-card" key={exp.id}>
                 <Card>
-                  <CardHeader tag="h4">{exp.title}</CardHeader>
-                  <CardBody>
+                  <CardHeader className='card-header' tag="h4">{exp.title}</CardHeader>
+                  <CardBody className='card-body'>
                      <p><strong>Location:</strong>{exp.location}</p>
                      <p><strong>Date:</strong>{exp.date}</p>
                      <p><strong>Price:</strong>{exp.price}</p>
@@ -115,7 +115,7 @@ editExperience = (e, experience) => {
                   </CardBody>
                   <CardFooter className="text-muted">
                     <div className="card-footer">
-                     <Button onClick={() => this.setState({ editingExperienceId: exp.id })}>Update</Button>
+                     <Button  onClick={() => this.setState({ editingExperienceId: exp.id })}>Update</Button>
                      <Button  onClick={() => this.deleteExperience(exp.id)}>Delete</Button>
                     </div>
                   </CardFooter>
