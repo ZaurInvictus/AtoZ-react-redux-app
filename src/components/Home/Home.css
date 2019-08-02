@@ -25,6 +25,17 @@
   font-family:  Helvetica, Arial, sans-serif;
 }
 
+@media (max-width: 600px) {
+  #landing-header h1 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 500px) {
+  #landing-header h1 {
+    font-size: 1.6rem;
+  }
+}
+
 .home-buttons {
   display: flex;
   margin: 5px;
