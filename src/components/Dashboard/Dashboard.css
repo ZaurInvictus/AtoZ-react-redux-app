@@ -1,5 +1,6 @@
 .dashboard {
   font-family:  Helvetica, Arial, sans-serif;
+  font-size: calc(10px + 2vmin);
 }
 
 .jumbotron-container {
@@ -108,4 +109,64 @@
    background-color: #F7F7F7;
    margin: 0;
    padding: 0;
+ }
+
+
+ /*//////////////////////////////////////////////////////////////
+ RESPONSIVE
+ max-width media queries 800px and 600px
+//////////////////////////////////////////////////////////////*/
+/* TABLET VIEW 800 PX*/
+ @media (max-width: 800px) {
+  .dashboard {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .jumbotron {
+    margin: 0 auto;
+  }
+
+  #header {
+    font-size: 3rem;
+  }
+
+  #header-p {
+    font-size: 1rem;
+  }
+
+  .home-logo {
+    font-size: 2.7rem;
+  }
+
+  .cta-box {
+    display: flex;
+    justify-content: center;
+    margin: 2px;
+  }
+  
+  .welcome-message {
+    display: none;
+  }
+
+
+/* CARD STYLES */
+  .experiences-card {
+    width: 30%;
+    font-size: 1rem;
+  }
+
+  .card-header {
+    font-size: 1rem;
+  }
+
+  .card-body p {
+    font-size: 0.9rem;
+  }
+
+  #card-btn {
+    width: 10%;
+    color: red;
+  }
+
  }
