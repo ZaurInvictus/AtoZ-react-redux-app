@@ -1,0 +1,31 @@
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.register-form {
+  width: 30%;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn-register {
+  width:100%;
+}
+
+input {
+  width:100%;
+}
+
+.register-form * {
+  margin: 10px;
+}
+
+p {
+  font-size: 1rem;
+}

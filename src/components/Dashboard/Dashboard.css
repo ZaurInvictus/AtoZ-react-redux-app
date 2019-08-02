@@ -1,0 +1,111 @@
+.dashboard {
+  font-family:  Helvetica, Arial, sans-serif;
+}
+
+.jumbotron-container {
+  display: flex;
+  justify-content: center;
+}
+
+.jumbotron {
+  width: 90%;
+  height: 52vh;
+}
+
+.display-3, .lead {
+  color: #333333;
+}
+
+.btn-share a{
+  color: #fff ;
+}
+.btn-share a:hover{
+  color: #fff ;
+  text-decoration: none;
+}
+
+.welcome-message {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.fas {
+  color: rgb(97, 164, 236) !important;
+}
+
+.cta-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 11px;
+}
+
+.search {
+  width: 30%;
+  height: 38px;
+  margin: 0 15px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #CED4DA;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+#search-input{
+  border: none;
+  height: 35px;
+  display: flex;
+  outline: none;
+}
+
+.fa-search {
+  padding: 15px;
+}
+
+.home-logo {
+  font-size: 3.8rem;
+}
+
+#search-input::-webkit-input-placeholder{
+  color:#6C757D;
+  font-size: 1rem;
+  padding: 15px;
+}
+
+.sweet-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30vh;
+}
+
+
+/* CARD STYLES */
+.experiences-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.experiences-card {
+  color: #333333;
+  width: 30%;
+  margin: 0;
+  padding: 0;
+}
+
+.experiences-card * {
+  margin: 5px;
+ }
+
+
+ .card-footer {
+   display: flex;
+   justify-content: center;
+   background-color: #F7F7F7;
+   margin: 0;
+   padding: 0;
+ }
