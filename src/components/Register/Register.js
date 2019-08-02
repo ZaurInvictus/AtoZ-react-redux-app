@@ -36,12 +36,13 @@ class Register extends React.Component {
 
 render() {
   return (
-   <div className='login-form'>
-    
+  <div className='register-page'>
+   <div className='form-wrapper'>
     {this.props.error && this.props.error} 
     <h1>Sign Up here</h1>
     <Form className='register-form' onSubmit={this.register}>
       <Input
+        className='register-input'
         type='text'
         name='username'
         placeholder='Username'
@@ -49,6 +50,7 @@ render() {
         onChange={this.handleChange}
       />
       <Input
+        className='register-input'
         type='password'
         name='password'
         placeholder='Password'
@@ -56,6 +58,7 @@ render() {
         onChange={this.handleChange}
       />
       <Input
+        className='register-input'
         type='text'
         name='first_name'
         placeholder='First Name'
@@ -63,6 +66,7 @@ render() {
         onChange={this.handleChange}
       />
       <Input
+        className='register-input'
         type='text'
         name='last_name'
         placeholder='Last Name'
@@ -70,6 +74,7 @@ render() {
         onChange={this.handleChange}
       />
       <Input
+        className='register-input'
         type='email'
         name='email'
         placeholder='Email'
@@ -77,6 +82,7 @@ render() {
         onChange={this.handleChange}
       />
       <Input
+        className='register-input'
         type='text'
         name='city'
         placeholder='City'
@@ -88,6 +94,7 @@ render() {
        </button>
        <p>Already have an account?<Link to='/login'>Log In here!</Link></p>
     </Form>
+   </div>
    </div>
    )
   }

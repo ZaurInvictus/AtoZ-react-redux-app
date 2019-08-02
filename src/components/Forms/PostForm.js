@@ -37,12 +37,13 @@ class PostExperience extends React.Component {
 
 
 render() {
-  console.log('PROPS of POST COMPONENT', this.props)
   return (
-   <div className='login-form'>
+   <div className='post-page'>
+     <div className='post-wrapper'>
     <h1>Let's add an experience!</h1>
     <Form className='post-form' onSubmit={this.postExperienceHandler}>
       <Input
+        className='post-input'
         type='text'
         name='title'
         placeholder='Title'
@@ -50,6 +51,7 @@ render() {
         onChange={this.handleChange}
       />
       <Input
+        className='post-input'
         type='date'
         name='date'
         placeholder='Date'
@@ -57,6 +59,7 @@ render() {
         onChange={this.handleChange}
       />
       <Input
+        className='post-input'
         type='text'
         name='location'
         placeholder='Location'
@@ -64,6 +67,7 @@ render() {
         onChange={this.handleChange}
       />
       <Input
+        className='post-input'
         type='number'
         name='price'
         placeholder='Price'
@@ -71,6 +75,7 @@ render() {
         onChange={this.handleChange}
       />
       <Input
+        className='post-input'
         type='textarea'
         name='description'
         placeholder='Description'
@@ -82,6 +87,7 @@ render() {
        </button>
        <p><Link to='/dashboard'>Go back</Link></p>
     </Form>
+    </div>
    </div>
    )
   }

@@ -1,13 +1,12 @@
-
-.login-page {
+.post-page {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60vh;
-}
+ }
+
 
 .post-form {
-  width: 30%;
+  width: 100%;
   align-items: center;
   flex-direction: column;
   display: flex;
@@ -18,11 +17,11 @@
   width:100%;
 }
 
-input {
+.post-input {
   width:100%;
 }
 
-.register-form * {
+.post-form * {
   margin: 10px;
 }
 

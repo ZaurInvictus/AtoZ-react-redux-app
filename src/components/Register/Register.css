@@ -1,13 +1,12 @@
 
-.login-page {
+.register-page {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60vh;
 }
 
 .register-form {
-  width: 30%;
+  width: 100%;
   align-items: center;
   flex-direction: column;
   display: flex;
@@ -18,7 +17,7 @@
   width:100%;
 }
 
-input {
+.register-input {
   width:100%;
 }
 
