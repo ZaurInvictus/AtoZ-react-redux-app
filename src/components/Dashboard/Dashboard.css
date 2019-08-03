@@ -48,20 +48,21 @@
   margin: 0 15px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   border: 1px solid #CED4DA;
   background-color: #fff;
   border-radius: 4px;
 }
 
-#search-input{
+#search-input {
   border: none;
   height: 35px;
-  display: flex;
+  width: 300px;
   outline: none;
 }
 
 .fa-search {
-  padding: 15px;
+  padding: 10px;
 }
 
 .home-logo {
@@ -110,6 +111,7 @@
    margin: 0;
    padding: 0;
  }
+
 
 
  /*//////////////////////////////////////////////////////////////
@@ -169,11 +171,11 @@
 
 /* MOBILE VIEW 550 PX*/
  @media (max-width: 550px) {
- .jumbotron {
+  .jumbotron {
     height: 270px;
     margin-bottom: 18px;
   }
-   
+
   #header {
     font-size: 2.2rem;
   }
@@ -197,5 +199,10 @@
 
 
 
+
+
+
+
  
  
+
