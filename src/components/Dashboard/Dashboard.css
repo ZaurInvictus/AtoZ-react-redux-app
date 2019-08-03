@@ -170,22 +170,27 @@
 /* MOBILE VIEW 550 PX*/
  @media (max-width: 550px) {
   #header {
-    font-size: 2.6rem;
-  }
-
-  .home-logo {
     font-size: 2.2rem;
   }
 
-  .welcome-message {
+  .home-logo {
+    font-size: 1.8rem;
+  }
+
+  #header-p {
     font-size: 0.9rem;
   }
 
+  .welcome-message {
+    font-size: 0.7rem;
+  }
+
+  .search i {
+    display: none;
+  }
  }
 
 
 
  
-  /* .welcome-message {
-    display: none;
-  } */
+ 
