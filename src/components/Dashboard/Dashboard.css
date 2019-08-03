@@ -141,14 +141,9 @@
   }
 
   .cta-box {
-    display: flex;
-    justify-content: center;
-    margin: 2px;
+    margin-bottom: 20px;
   }
-  
-  .welcome-message {
-    display: none;
-  }
+
 
 
 /* CARD STYLES */
@@ -169,8 +164,28 @@
     font-size: 0.9rem;
   }
 
-  #card-btn {
-    width: 10%;
+ }
+
+
+/* MOBILE VIEW 550 PX*/
+ @media (max-width: 550px) {
+  #header {
+    font-size: 2.6rem;
+  }
+
+  .home-logo {
+    font-size: 2.2rem;
+  }
+
+  .welcome-message {
+    font-size: 0.9rem;
   }
 
  }
+
+
+
+ 
+  /* .welcome-message {
+    display: none;
+  } */

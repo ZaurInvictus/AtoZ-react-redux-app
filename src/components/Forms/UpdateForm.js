@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Input, Label, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import './Update.css'
 
 class UpdateForm extends React.Component {
   state = {
@@ -34,7 +35,7 @@ toggle=()=> {
 
   render() {
     return (
-      <div className="edit-form">
+      <div className="edit-form-wrapper">
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader >Update Experience</ModalHeader>
           <ModalBody>

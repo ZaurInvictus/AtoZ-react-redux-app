@@ -40,7 +40,7 @@ render() {
   return (
    <div className='post-page'>
      <div className='post-wrapper'>
-     <h1>Let's add an experience!</h1>
+     <h1 className='post-form-header'>Let's add an experience!</h1>
     <Form className='post-form' onSubmit={this.postExperienceHandler}>
       <Input
         className='post-input'
