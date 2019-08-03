@@ -125,6 +125,7 @@
 
   .jumbotron {
     margin: 0 auto;
+    width: 96%;
   }
 
   #header {
@@ -151,8 +152,12 @@
 
 
 /* CARD STYLES */
-  .experiences-card {
-    width: 30%;
+ .experiences-wrapper {
+   width: 98%
+ }
+
+ .experiences-card {
+    width: 50%;
     font-size: 1rem;
   }
 
