@@ -79,7 +79,9 @@ export const reducer = (state = initialState, action) => {
             registering: false,
             error: action.payload,
             loggedIn: false,
-            newUser: ''
+            newUser: '',
+            registerMessage: 'User with this username already exists. Please log in!',
+            loginMessage: '',
           }
 
            //LOGIN 
