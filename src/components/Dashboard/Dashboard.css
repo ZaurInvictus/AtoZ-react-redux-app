@@ -169,6 +169,11 @@
 
 /* MOBILE VIEW 550 PX*/
  @media (max-width: 550px) {
+  .jumbotron {
+    height: 250px;
+    margin-bottom: 12px;
+  }
+   
   #header {
     font-size: 2.2rem;
   }
