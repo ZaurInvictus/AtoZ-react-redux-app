@@ -115,8 +115,8 @@ editExperience = (e, experience) => {
                   </CardBody>
                   <CardFooter className="text-muted">
                     <div className="card-footer">
-                     <Button  onClick={() => this.setState({ editingExperienceId: exp.id })}>Update</Button>
-                     <Button  onClick={() => this.deleteExperience(exp.id)}>Delete</Button>
+                     <Button onClick={() => this.setState({ editingExperienceId: exp.id })}>Update</Button>
+                     <Button onClick={() => this.deleteExperience(exp.id)}>Delete</Button>
                     </div>
                   </CardFooter>
                </Card>
