@@ -1,5 +1,20 @@
+# A to Z Front-end
+
+Front-end for A to Z build week project
+
+# Deployed 
+
+[https://determined-mirzakhani-9e6269.netlify.com/]
+
+# Technologies
+
+###### Production
+
+- [React](https://reactjs.org/): A JavaScript library for building user interfaces
+- [Redux](https://redux.js.org/): A predictable state container for JavaScript apps.
+- [Reactstrap](https://reactstrap.github.io/): Stateless React Components for Bootstrap 4.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-git push zaur-origin master
 
 ## Available Scripts
 
