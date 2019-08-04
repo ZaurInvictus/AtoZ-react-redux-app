@@ -28,6 +28,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
   - [Register User](#register)
   - [Login User](#login)
+  - [Get Experiences](#post)
   - [Post Experience](#post)
   - [Update Experience](#update)
   - [Delete Experience](#delete)
