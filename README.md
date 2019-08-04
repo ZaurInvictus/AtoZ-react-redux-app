@@ -16,6 +16,22 @@ Front-end for A to Z build week project
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Setup
+
+# Install dependencies
+
+##`npm install`
+
+# Table of Contents
+
+- [Auth Routes](#auth-routes)
+
+  - [Register User](#register)
+  - [Login User](#login)
+  - [Post Experience](#post)
+  - [Update Experience](#update)
+  - [Delete Experience](#delete)
+
 ## Available Scripts
 
 In the project directory, you can run:
