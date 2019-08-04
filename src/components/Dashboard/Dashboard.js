@@ -14,13 +14,14 @@ class Dashboard extends React.Component {
     deletingExperience: null,
     editingExperienceId: null,
     filteredExperiences: [],
-    modal: false
+    modal: false,
   };
 
 
 componentDidMount() {
   this.props.getExperiences()
 }
+
 
 
 deleteExperience = id => {
@@ -41,11 +42,11 @@ editExperience = (e, experience) => {
 
 
   searchPostsHandler = e => {
-    const exp = this.props.experiences.filter(curr => curr.title.includes(e.target.value));
+    const exp = this.props.experiences.filter(curr => curr.title.toLowerCase().includes(e.target.value.toLowerCase()))
     this.setState({ filteredExperiences: exp })
   };
 
-
+  
 
   render() {
     if (this.props.fetchingExperiences) {
