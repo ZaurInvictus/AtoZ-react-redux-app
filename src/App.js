@@ -11,6 +11,7 @@ import { logout } from './actions/actions'
 import Dashboard from './components/Dashboard/Dashboard';
 import Home from './components/Home/Home'
 import PostExperience from './components/Forms/PostForm'
+import Rsvp from './components/Rsvp/Rsvp';
 
 
 class App extends React.Component {
@@ -30,11 +31,12 @@ class App extends React.Component {
           <li>
           <i className="fas fa-city"></i>
             <Link to='/'>ATOZ</Link>
+            <span>{this.props.registeredUser && <span>User Id: <strong>{this.props.registeredUser.id}</strong></span>}</span>
           </li>
           <li>
              {this.props.loggedIn ? 
              <div className="div">
-             <span>Signed In as <strong><em>{this.props.registeredUser}</em></strong></span>
+             <span>Signed In as <strong><em>{this.props.registeredUser.username}</em></strong></span>
               <button onClick={this.logOut} className="btn btm-sm btn-primary">Logout</button> 
               
              </div> : 
@@ -60,6 +62,10 @@ class App extends React.Component {
         <PrivateRoute
          exact path='/post'
          component={PostExperience}
+        />
+        <PrivateRoute
+         exact path='/rsvp'
+         component={Rsvp}
         />
       </header>
     </div>

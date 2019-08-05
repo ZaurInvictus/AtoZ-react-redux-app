@@ -24,6 +24,10 @@ import {
   EDIT_EXPERIENCE_START,
   EDIT_EXPERIENCE_SUCCESS,
   EDIT_EXPERIENCE_FAILURE,
+
+  RSVP_START, 
+  RSVP_SUCCESS, 
+  RSVP_ERROR 
 } from "../actions/actions";
 
 
@@ -70,7 +74,7 @@ export const reducer = (state = initialState, action) => {
           newUser: action.payload,
           loggedIn: true,
           loginMessage: '',
-          registeredUser: action.payload.username
+          registeredUser: action.payload
         }
 
         case REGISTER_ERROR:
@@ -104,7 +108,7 @@ export const reducer = (state = initialState, action) => {
           loggedIn: true,
           logout: true,
           registerMessage: '',
-          registeredUser: action.payload.username
+          registeredUser: action.payload
         }
 
         case LOGIN_ERROR:
@@ -113,7 +117,8 @@ export const reducer = (state = initialState, action) => {
             isLoggingIn: false,
             error: action.payload,
             loggedInUser: '',
-            loggedIn: false
+            loggedIn: false,
+            registerMessage: action.payload,
           }
 
           //LOGOUT
@@ -139,8 +144,8 @@ export const reducer = (state = initialState, action) => {
           return {
             ...state,
            fetchingExperiences: false,
-            error: null,
-            experiences: action.payload
+           error: null,
+           experiences: action.payload
           }
 
         case FETCH_EXPERIENCES_ERROR:
@@ -219,6 +224,27 @@ export const reducer = (state = initialState, action) => {
                     editingExperience: false,
                     error: action.payload,
                 };
+
+
+                 // RSVP EXPERIENCE
+                 case RSVP_START:
+                  return {
+                    ...state,
+                    rsvpError: '',
+                  };
+
+                case RSVP_SUCCESS:
+                  return {
+                    ...state,
+                    registerMessage: action.payload, 
+                    rsvpError: '',
+                    loginMessage: '',
+                  };
+
+                  case RSVP_ERROR: 
+                  return {
+                    rsvpError: 'User or experience Id is wrong. Please try again.',
+                  }
 
          default:
          return state

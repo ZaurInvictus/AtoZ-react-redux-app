@@ -169,3 +169,26 @@ export const getUserExperiences = (id) => dispatch => {
     });
 };
 
+
+
+//RSVP USER TO EXPERIENCE
+export const RSVP_START = "RSVP_START";
+export const RSVP_SUCCESS = "RSVP_SUCCESS";
+export const RSVP_ERROR = "RSVP_ERROR";
+
+export const rsvpExperience = creds => dispatch =>{
+   dispatch({ type: RSVP_START })
+   return axiosWithAuth()
+  .post(`/experiences/attend`, creds)
+  .then(res => {
+    console.log('RES of RSVP AXIOS CALL', res)
+       dispatch({ type: RSVP_SUCCESS, payload: res.data.message });
+   })
+   .catch(err => {
+        dispatch({ type: RSVP_ERROR, payload: err});
+   });
+};
+
+
+
+
