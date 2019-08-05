@@ -53,6 +53,7 @@ render() {
             name='user_id'
             id="text" 
             placeholder="User Id"
+            required
             value={this.state.credentials.user_id}
             onChange={this.handleChange}
            />
@@ -62,6 +63,7 @@ render() {
             name="experience_id" 
             id="examplePassword" 
             placeholder="Experience Id" 
+            required
             value={this.state.credentials.experience_id}
             onChange={this.handleChange}
            />
