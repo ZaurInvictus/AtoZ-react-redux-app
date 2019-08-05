@@ -49,9 +49,9 @@ deleteExperience = id => {
          <Jumbotron className='user-jumbotron'>
 
           <div className="cta">
-            <h1>Booked Experiences</h1>
+            <h1 id='user-page-cta-header'>Booked Experiences</h1>
             <hr className="my-2"/>
-            <div>
+            <div className='user-page-cta-buttons'>
              <Button className='btn-share-user' outline color="primary"><Link to='/dashboard'>Find Experience</Link></Button>
              <Button className='btn-share-user' outline ><Link to='/rsvp'>Rsvp Experience</Link></Button>
             </div>

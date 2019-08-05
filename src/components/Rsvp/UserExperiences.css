@@ -32,3 +32,16 @@
   color: #fff;
   text-decoration: none;
 }
+
+
+@media(max-width: 550px){
+  #user-page-cta-header {
+    font-size: 2rem;
+  }
+
+  .user-page-cta-buttons {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 5px;
+  }
+}
