@@ -11,6 +11,8 @@ Front-end for A to Z build week project
 # Back-End
 Repo: [https://github.com/ZaurInvictus/AtoZ_backend]
 
+###### Production
+
 - [Express](https://www.npmjs.com/package/express): Fast, unopinionated, minimalist web framework for Node.js
 - [Bcryptjs](https://www.npmjs.com/package/body-parser): Allows you to store passwords securely in your database
 - [Jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken): Generate and verify json web tokens to maintain a stateless api
@@ -22,8 +24,6 @@ Repo: [https://github.com/ZaurInvictus/AtoZ_backend]
 - [Dotenv](https://www.npmjs.com/package/dotenv): Dotenv is a zero-dependency module that loads environment variables from a .env file
 
 # Front-End
-
-###### Production
 
 - [React](https://reactjs.org/): A JavaScript library for building user interfaces
 - [Redux](https://redux.js.org/): A predictable state container for JavaScript apps.
