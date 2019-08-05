@@ -1,0 +1,41 @@
+.rsvp-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+
+.rsvp-form {
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-rsvp {
+  width:100%;
+}
+
+.rsvp-input {
+  width:100%;
+}
+
+.rsvp-form * {
+  margin: 10px;
+}
+
+p {
+  font-size: 1rem;
+}
+
+@media (max-width: 550px) {
+  .rsvp-form-wrapper {
+    width: 95%;
+  }
+
+  .rsvp-form-header {
+    margin: 0 auto;
+    font-size: 2.2rem;
+  }
+}
