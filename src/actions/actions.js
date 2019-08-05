@@ -183,7 +183,6 @@ export const getUserExperiences = (id) => dispatch => {
       dispatch({
          type: GET_USER_EXP_SUCCESS, 
          payload: res.data,
-         //message: res.data.message
         });
     })
     .catch(err => {

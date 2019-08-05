@@ -270,7 +270,6 @@ export const reducer = (state = initialState, action) => {
                  case GET_USER_EXP_ERROR:
                   return {
                     ...state,
-                    // registerMessage: '', 
   
                   };
 
