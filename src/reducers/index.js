@@ -27,7 +27,11 @@ import {
 
   RSVP_START, 
   RSVP_SUCCESS, 
-  RSVP_ERROR 
+  RSVP_ERROR,
+
+   GET_USER_EXP_START,
+   GET_USER_EXP_SUCCESS,
+   GET_USER_EXP_ERROR
 } from "../actions/actions";
 
 
@@ -50,6 +54,8 @@ const initialState = {
   editingExperience: false,
   deletingExperience: false,
   deleteMessage: '', 
+
+  userExperiences: []
 }
 
 
@@ -246,7 +252,24 @@ export const reducer = (state = initialState, action) => {
                     rsvpError: 'User or experience Id is wrong. Please try again.',
                   }
 
+
+                  // EXPERIENCES USER ATTENDING
+                 case GET_USER_EXP_START:
+                  return {
+                    ...state,
+                   
+                  };
+
+                 case GET_USER_EXP_SUCCESS:
+                  return {
+                    ...state,
+                    registerMessage: '', 
+                    userExperiences: action.payload
+                  };
+
          default:
          return state
        }
       }
+      
+    

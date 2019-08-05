@@ -146,30 +146,6 @@ export const updateExperience = experience => dispatch => {
 };
 
 
-// GET USER EXPERIENCES 
-export const GET_USER_EXP_START = "GET_USER_EXP_START";
-export const GET_USER_EXP_SUCCESS = "GET_USER_EXP_SUCCESS";
-export const GET_USER_EXP_ERROR = "GET_USER_EXP_ERROR";
-
-
-export const getUserExperiences = (id) => dispatch => {
-  dispatch({ type: GET_USER_EXP_START })
-  return axios
-    .get(`https://atoz-backend.herokuapp.com/api/users/${id}/host_experiences`, {
-      headers: { Authorization: localStorage.getItem('token') }
-    })
-    .then(res => {
-      dispatch({
-         type: GET_USER_EXP_SUCCESS, 
-         payload: res.data.experiences,
-        });
-    })
-    .catch(err => {
-        dispatch({ type: GET_USER_EXP_ERROR, payload: err.response })
-    });
-};
-
-
 
 //RSVP USER TO EXPERIENCE
 export const RSVP_START = "RSVP_START";
@@ -187,6 +163,33 @@ export const rsvpExperience = creds => dispatch =>{
    .catch(err => {
         dispatch({ type: RSVP_ERROR, payload: err});
    });
+};
+
+
+// GET EXPERIENCES USER EXPERIENCES 
+export const GET_USER_EXP_START = "GET_USER_EXP_START";
+export const GET_USER_EXP_SUCCESS = "GET_USER_EXP_SUCCESS";
+export const GET_USER_EXP_ERROR = "GET_USER_EXP_ERROR";
+
+
+export const getUserExperiences = (id) => dispatch => {
+  dispatch({ type: GET_USER_EXP_START })
+  return axios
+    .get(`https://atoz-backend.herokuapp.com/api/users/${id}/experiences_attending`, {
+      headers: { Authorization: localStorage.getItem('token') }
+    })
+    .then(res => {
+      console.log('RES OF GET USER EXPERIENCES BY USER ID', res)
+      dispatch({
+         type: GET_USER_EXP_SUCCESS, 
+         payload: res.data,
+         //message: res.data.message
+        });
+    })
+    .catch(err => {
+      console.log('call failed: ', err.response);
+        dispatch({ type: GET_USER_EXP_ERROR, payload: err.response })
+    });
 };
 
 
