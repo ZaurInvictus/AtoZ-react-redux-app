@@ -37,10 +37,9 @@ class App extends React.Component {
           <li>
              {this.props.loggedIn ? 
              <div className="div">
-             <Link to='/user-page'>My Experiences</Link>
+             <Link to='/user-page'>Your Bookings</Link>
              <span>Signed In as <strong><em>{this.props.registeredUser.username}</em></strong></span>
               <button onClick={this.logOut} className="btn btm-sm btn-primary">Logout</button> 
-              
              </div> : 
               <span>
                 <Link to='/login'>Login</Link>

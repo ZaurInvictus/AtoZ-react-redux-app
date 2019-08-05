@@ -147,8 +147,10 @@ editExperience = (e, experience) => {
                 <Card>
                   <CardHeader className='card-header' tag="h4">
                     {exp.title}
-                    <span><Link to='/rsvp'>Rsvp</Link></span>
                   </CardHeader>
+                    <Button outline color="info" size="sm" id='rsvp-btn'>
+                      <Link to='/rsvp'>Rsvp</Link>
+                    </Button>
                   <CardBody>
                      <p><strong>Location:</strong>{exp.location}</p>
                      <p><strong>Date:</strong>{exp.date}</p>

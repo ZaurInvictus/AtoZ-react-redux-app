@@ -66,7 +66,7 @@ render() {
         <button type="submit" className="btn btn-login btn-primary">
           {this.props.isLoggingIn ? 'Loading' : 'RSVP'}
         </button>
-        <p>Do not remember Id of the experience?<Link to='/dashboard'>Back</Link></p>
+         <p>Do not remember Id of the experience?<Link to='/dashboard'>Back</Link></p>
       </Form>
       </div>
    </div>
