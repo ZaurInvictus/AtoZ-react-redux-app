@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
-import { register, login, getExperiences, postExperience, deleteExperience, updateExperience } from '../../actions/actions'
+import { register, login, getExperiences, postExperience, deleteExperience, updateExperience, rsvpExperience } from '../../actions/actions'
 import UpdateForm  from '../Forms/UpdateForm'
 import './Dashboard.css'
 import {Jumbotron,  Alert,  Card, Button, CardHeader, CardFooter, CardBody} from 'reactstrap';
@@ -41,12 +41,15 @@ editExperience = (e, experience) => {
 }
 
 
+
   searchPostsHandler = e => {
     const exp = this.props.experiences.filter(curr => curr.title.toLowerCase().includes(e.target.value.toLowerCase()))
     this.setState({ filteredExperiences: exp })
   };
 
+
   
+
 
   render() {
     if (this.props.fetchingExperiences) {
@@ -83,10 +86,8 @@ editExperience = (e, experience) => {
           </div>
 
           <div className="welcome-message">
-           <Alert color="success">
-             {this.props.registerMessage && this.props.registerMessage}
-             {this.props.loginMessage && this.props.loginMessage}
-           </Alert>
+             {this.props.registerMessage && <Alert color="success">{this.props.registerMessage}</Alert>}
+             {this.props.loginMessage && <Alert color="success">{this.props.loginMessage}</Alert>}
           </div>
          </Jumbotron>
         </div>
@@ -107,12 +108,16 @@ editExperience = (e, experience) => {
           return (
             <div className="experiences-card" key={exp.id}>
                 <Card>
-                  <CardHeader className='card-header' tag="h4">{exp.title}</CardHeader>
+                  <CardHeader className='card-header' tag="h4">
+                    {exp.title}
+                    <span><Link to='/rsvp'>Rsvp</Link></span>
+                  </CardHeader>
                   <CardBody className='card-body'>
                      <p><strong>Location:</strong>{exp.location}</p>
                      <p><strong>Date:</strong>{exp.date}</p>
                      <p><strong>Price:</strong>{exp.price}</p>
                      <p><strong>Description:</strong>{exp.description}</p>
+                     <p><strong>Id:</strong>{exp.id}</p>
                   </CardBody>
                   <CardFooter className="text-muted">
                     <div className="card-footer">
@@ -140,12 +145,16 @@ editExperience = (e, experience) => {
           return (
             <div className="experiences-card" key={exp.id}>
                 <Card>
-                  <CardHeader tag="h4">{exp.title}</CardHeader>
+                  <CardHeader className='card-header' tag="h4">
+                    {exp.title}
+                    <span><Link to='/rsvp'>Rsvp</Link></span>
+                  </CardHeader>
                   <CardBody>
                      <p><strong>Location:</strong>{exp.location}</p>
                      <p><strong>Date:</strong>{exp.date}</p>
                      <p><strong>Price:</strong>{exp.price}</p>
                      <p><strong>Description:</strong>{exp.description}</p>
+                     <p><strong>Id:</strong>{exp.id}</p>
                   </CardBody>
                   <CardFooter className="text-muted">
                     <div className="card-footer">
@@ -188,7 +197,8 @@ const mapStateToProps = state => {
 export default withRouter (
   connect(
     mapStateToProps,
-    { register, login, getExperiences, postExperience, deleteExperience, updateExperience  }
+    { register, login, getExperiences, postExperience, deleteExperience, updateExperience, rsvpExperience 
+    }
   )(Dashboard)
 )
 
