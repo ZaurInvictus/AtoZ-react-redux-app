@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
 import {  getUserExperiences, register, login, getExperiences, postExperience, deleteExperience, updateExperience } from '../../actions/actions'
 import { Jumbotron,  Alert, Card, Button, CardHeader, CardFooter, CardBody} from 'reactstrap'
-// import './UserExperiences.css'
+import './UserExperiences.css'
 import { ClipLoader } from 'react-spinners'
 
 
@@ -27,7 +27,7 @@ class UserExperiences extends Component {
 
 deleteExperience = id => {
    this.props.deleteExperience(id).then(() => {
-   this.setState({filteredExperiences: [], deletingExperienceId: id });
+  //  this.setState({filteredExperiences: [], deletingExperienceId: id });
    this.props.getExperiences()
   })
 }
@@ -57,6 +57,28 @@ deleteExperience = id => {
     }
     console.log(this.props)
      return(
+      <div className="user-experiences-page">
+
+       <div className="jumbotron-container">
+         <Jumbotron className='user-jumbotron'>
+
+          <div className="cta">
+            <h1>Booked Experiences</h1>
+            <hr className="my-2"/>
+            <div>
+             <Button className='btn-share-user' outline color="primary"><Link to='/dashboard'>Find Experience</Link></Button>
+             <Button className='btn-share-user' outline ><Link to='/rsvp'>Rsvp Experience</Link></Button>
+            </div>
+           </div>
+
+          <div className="welcome-message">
+             {this.props.registerMessage && <Alert color="success">{this.props.registerMessage}</Alert>}
+             {this.props.loginMessage && <Alert color="success">{this.props.loginMessage}</Alert>}
+          </div>
+         </Jumbotron>
+        </div>
+       
+          
           <div className='user-experiences-card-wrapper'>
              {this.props.userExperiences.map(exp => {
                return (
@@ -78,8 +100,8 @@ deleteExperience = id => {
               </div>
                )
              })}
-             <p>Do not have Rsvp yet?<Link to='/dashboard'>Back</Link></p>
          </div>
+       </div> 
          )      
         }
       }

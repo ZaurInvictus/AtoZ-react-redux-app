@@ -103,6 +103,10 @@
   margin: 5px;
  }
 
+ #rsvp-btn:hover {
+   background-color: #E9ECEF;
+ }
+
 
  .card-footer {
    display: flex;

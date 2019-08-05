@@ -267,6 +267,13 @@ export const reducer = (state = initialState, action) => {
                     userExperiences: action.payload
                   };
 
+                 case GET_USER_EXP_ERROR:
+                  return {
+                    ...state,
+                    // registerMessage: '', 
+  
+                  };
+
          default:
          return state
        }
