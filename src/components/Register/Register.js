@@ -46,6 +46,7 @@ render() {
         type='text'
         name='username'
         placeholder='Username'
+        required
         value={this.state.credentials.username}
         onChange={this.handleChange}
       />
@@ -54,6 +55,7 @@ render() {
         type='password'
         name='password'
         placeholder='Password'
+        required
         value={this.state.credentials.password}
         onChange={this.handleChange}
       />

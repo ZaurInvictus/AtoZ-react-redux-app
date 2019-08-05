@@ -47,6 +47,7 @@ render() {
         type='text'
         name='title'
         placeholder='Title'
+        required
         value={this.state.title}
         onChange={this.handleChange}
       />
@@ -55,6 +56,7 @@ render() {
         type='date'
         name='date'
         placeholder='Date'
+        required
         value={this.state.date}
         onChange={this.handleChange}
       />
@@ -62,6 +64,7 @@ render() {
         className='post-input'
         type='text'
         name='location'
+        required
         placeholder='Location'
         value={this.state.location}
         onChange={this.handleChange}
