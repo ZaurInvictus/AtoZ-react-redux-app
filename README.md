@@ -9,7 +9,7 @@ Front-end for A to Z build week project
 # Technologies
 
 # Back-End
-[https://github.com/ZaurInvictus/AtoZ_backend]
+Repo: [https://github.com/ZaurInvictus/AtoZ_backend]
 
 - [Express](https://www.npmjs.com/package/express): Fast, unopinionated, minimalist web framework for Node.js
 - [Bcryptjs](https://www.npmjs.com/package/body-parser): Allows you to store passwords securely in your database
