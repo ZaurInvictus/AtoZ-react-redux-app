@@ -9,12 +9,7 @@ import { ClipLoader } from 'react-spinners'
 
 
 class UserExperiences extends Component {
-  state = {
-    deletingExperience: null,
-    editingExperienceId: null,
-    filteredExperiences: [],
-    modal: false
-  };
+ 
 
 
   componentDidMount() {
@@ -27,18 +22,9 @@ class UserExperiences extends Component {
 
 deleteExperience = id => {
    this.props.deleteExperience(id).then(() => {
-  //  this.setState({filteredExperiences: [], deletingExperienceId: id });
-   this.props.getExperiences()
+    this.props.history.push('/dashboard');
   })
 }
-
-
-  searchPostsHandler = e => {
-    console.log(this.state)
-    const exp = this.props.userExperiences.filter(curr => curr.title.includes(e.target.value));
-    this.setState({ filteredExperiences: exp })
-  };
-
 
 
 
