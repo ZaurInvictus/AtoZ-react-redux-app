@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { Form, Input, Alert } from 'reactstrap'
 import { register, login, rsvpExperience, getExperiences } from '../../actions/actions';
+import './Rsvp.css'
+
 
 
 
@@ -39,14 +41,14 @@ class RsvpExperience extends React.Component {
 
 render() {
   return (
-   <div className='login-page'>
-   <div className='form-wrapper'>
+   <div className='rsvp-page'>
+   <div className='rsvp-form-wrapper'>
     {this.props.rsvpError && <Alert color="danger" >{this.props.rsvpError}</Alert>}
-    <h1>Rsvp to an experience!</h1>
+    <h1 className='rsvp-form-header'>Rsvp to an experience!</h1>
     <p>Please add your Id and Id of the experience you want to Rsvp</p>
-     <Form className='login-form' onSubmit={this.rsvp}> 
+     <Form className='rsvp-form' onSubmit={this.rsvp}> 
           <Input 
-            className='login-input'
+            className='rsvp-input'
             type="text" 
             name='user_id'
             id="text" 
@@ -55,7 +57,7 @@ render() {
             onChange={this.handleChange}
            />
           <Input 
-            className='login-input'
+            className='rsvp-input'
             type="text" 
             name="experience_id" 
             id="examplePassword" 
@@ -63,7 +65,7 @@ render() {
             value={this.state.credentials.experience_id}
             onChange={this.handleChange}
            />
-        <button type="submit" className="btn btn-login btn-primary">
+        <button type="submit" className="btn btn-rsvp btn-primary">
           {this.props.isLoggingIn ? 'Loading' : 'RSVP'}
         </button>
          <p>Do not remember Id of the experience?<Link to='/dashboard'>Back</Link></p>

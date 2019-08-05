@@ -1,4 +1,30 @@
-ul {
+.navbar{
+  margin-bottom: 25px;
+}
+
+.brand {
+  color:#0069D9;
+}
+
+.menu-bar {
+  display: flex;
+  align-items: center;
+}
+
+ a {
+  text-decoration: none;
+  padding: 10px;
+  font-weight: bold;
+} 
+
+span {
+  color: #333333;
+  margin: 10px;
+  font-size: 1rem;
+}
+
+
+ /* ul {
   display: flex;
   justify-content: flex-start;
   margin: 0 0 36px;
@@ -9,15 +35,4 @@ ul {
 li {
   list-style: none;
   margin-right: 6px;
-}
-
-a {
-  text-decoration: none;
-  padding: 10px;
-  font-weight: bold;
-}
-
-span {
-  color: #0069D9;
-  margin: 15px;
-}
+} */

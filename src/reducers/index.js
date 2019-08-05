@@ -125,6 +125,7 @@ export const reducer = (state = initialState, action) => {
             loggedInUser: '',
             loggedIn: false,
             registerMessage: action.payload,
+            loginMessage: '',
           }
 
           //LOGOUT
