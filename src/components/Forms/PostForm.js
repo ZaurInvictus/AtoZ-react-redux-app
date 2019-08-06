@@ -1,12 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { postExperience } from '../../actions/actions'
+import { postExperience, register } from '../../actions/actions'
 import {  Form, Input } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import './Post.css'
 
 class PostExperience extends React.Component {
   state = { 
+      user_id: this.props.registeredUser.id,        
       title: "",
       date: "",
       location: "",
@@ -23,9 +24,10 @@ class PostExperience extends React.Component {
   
     postExperienceHandler = (e)=> {
       e.preventDefault()
-      const { title, date, location, price, description } = this.state
-      this.props.postExperience({ title, date, location, price, description})
-      this.setState({   
+      const { user_id, title, date, location, price, description } = this.state
+      this.props.postExperience({ user_id, title, date, location, price, description})
+      this.setState({ 
+        user_id: "",  
         title: "",
         date: "",
         location: "",
@@ -98,6 +100,7 @@ render() {
 
 const mapStateToProps = state => {
   return {
+    registeredUser: state.registeredUser,
     postingExperience: state.postingExperience,
     error: state.error,
   }
@@ -105,6 +108,6 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { postExperience }
+  { postExperience, register}
 )(PostExperience)
 

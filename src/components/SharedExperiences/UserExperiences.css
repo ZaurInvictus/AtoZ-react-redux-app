@@ -1,0 +1,51 @@
+.user-experiences-card-wrapper{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+.user-jumbotron {
+  height: 280px;
+}
+
+.cta {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+}
+.cta *{
+  font-family:  Helvetica, Arial, sans-serif;
+  color: #333333;
+  margin: 5px;
+}
+
+.btn-share-user a{
+  color: #0056B3
+}
+
+.btn-share-user a:hover{
+  color: #fff;
+  text-decoration: none;
+}
+
+
+@media(max-width: 550px){
+  .user-jumbotron {
+    height: 220px;
+  }
+
+  #user-page-cta-header {
+    font-size: 2rem;
+  }
+
+  .user-page-cta-buttons {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 5px;
+  }
+}

@@ -60,7 +60,6 @@ editExperience = (e, experience) => {
 
 
   render() {
-    console.log('SSSSSSSSSSS', this.state.userId)
     if (this.props.fetchingExperiences) {
       return (
         <div className='sweet-loading'>

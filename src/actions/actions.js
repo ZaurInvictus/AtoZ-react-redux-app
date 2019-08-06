@@ -166,7 +166,7 @@ export const rsvpExperience = creds => dispatch =>{
 };
 
 
-// GET EXPERIENCES USER EXPERIENCES 
+// GET EXPERIENCES USER RSVP TO
 export const GET_USER_EXP_START = "GET_USER_EXP_START";
 export const GET_USER_EXP_SUCCESS = "GET_USER_EXP_SUCCESS";
 export const GET_USER_EXP_ERROR = "GET_USER_EXP_ERROR";
@@ -194,3 +194,27 @@ export const getUserExperiences = (id) => dispatch => {
 
 
 
+// GET EXPERIENCES USER SHARED
+export const GET_USER_SHARED_START = "GET_USER_SHARED_START";
+export const GET_USER_SHARED_SUCCESS = "GET_USER_SHARED_SUCCESS";
+export const GET_USER_SHARED_ERROR = "GET_USER_SHARED_ERROR";
+
+
+export const userSharedExperiences = (id) => dispatch => {
+  dispatch({ type: GET_USER_SHARED_START })
+  return axios
+    .get(`https://atoz-backend.herokuapp.com/api/users/${id}/host_experiences`, {
+      headers: { Authorization: localStorage.getItem('token') }
+    })
+    .then(res => {
+      console.log('GGGGGGGGGGGGGGGGGGGGGGGGGGGG', res)
+      dispatch({
+         type: GET_USER_SHARED_SUCCESS, 
+         payload: res.data.experiences,
+        });
+    })
+    .catch(err => {
+      console.log('call failed: ', err.response);
+        dispatch({ type: GET_USER_SHARED_ERROR, payload: err.response })
+    });
+};

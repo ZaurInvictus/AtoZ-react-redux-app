@@ -31,7 +31,11 @@ import {
 
    GET_USER_EXP_START,
    GET_USER_EXP_SUCCESS,
-   GET_USER_EXP_ERROR
+   GET_USER_EXP_ERROR,
+
+   GET_USER_SHARED_START,
+   GET_USER_SHARED_SUCCESS,
+   GET_USER_SHARED_ERROR
 } from "../actions/actions";
 
 
@@ -55,7 +59,8 @@ const initialState = {
   deletingExperience: false,
   deleteMessage: '', 
 
-  userExperiences: []
+  userExperiences: [],
+  sharedExperiences: []
 }
 
 
@@ -254,7 +259,7 @@ export const reducer = (state = initialState, action) => {
                   }
 
 
-                  // EXPERIENCES USER ATTENDING
+                // GET EXPERIENCES USER ATTENDING
                  case GET_USER_EXP_START:
                   return {
                     ...state,
@@ -269,6 +274,26 @@ export const reducer = (state = initialState, action) => {
                   };
 
                  case GET_USER_EXP_ERROR:
+                  return {
+                    ...state,
+  
+                  };
+
+                // GET EXPERIENCES USER SHARED
+                 case GET_USER_SHARED_START:
+                  return {
+                    ...state,
+                   
+                  };
+
+                 case GET_USER_SHARED_SUCCESS:
+                  return {
+                    ...state,
+                    registerMessage: '', 
+                    sharedExperiences: action.payload
+                  };
+
+                 case GET_USER_SHARED_ERROR:
                   return {
                     ...state,
   
