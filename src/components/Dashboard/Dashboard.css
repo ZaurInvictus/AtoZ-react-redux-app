@@ -33,7 +33,7 @@
 }
 
 .fas {
-  color: rgb(97, 164, 236) !important;
+  color: rgb(97, 164, 236);
 }
 
 .cta-box {
@@ -103,8 +103,13 @@
   margin: 5px;
  }
 
+ #rsvp-btn {
+   font-weight: bold;
+   font-size: 1rem;
+ }
+
  #rsvp-btn:hover {
-   background-color: #E9ECEF;
+   background-color:  rgb(97, 164, 236);
  }
 
 
