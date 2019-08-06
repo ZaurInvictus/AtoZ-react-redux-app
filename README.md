@@ -49,7 +49,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   - [Delete Experience](#delete)
   - [RSVP User to Experience](#rsvp)
   - [Get Experiences Users Attending](#user-page)
-
+  - [Get Experiences User Shared](#user-shared-page)
+  
 ## Available Scripts
 
 In the project directory, you can run:
