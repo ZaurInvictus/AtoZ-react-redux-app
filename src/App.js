@@ -11,7 +11,6 @@ import { logout } from './actions/actions'
 import Dashboard from './components/Dashboard/Dashboard'
 import Home from './components/Home/Home'
 import PostExperience from './components/Forms/PostForm'
-import Rsvp from './components/Rsvp/Rsvp'
 import UserExperiences from './components/Rsvp/UserExperiences'
 import {
   Collapse,
@@ -88,10 +87,6 @@ class App extends React.Component {
         <PrivateRoute
          exact path='/post'
          component={PostExperience}
-        />
-        <PrivateRoute
-         exact path='/rsvp'
-         component={Rsvp}
         />
         <PrivateRoute
          exact path='/user-page'
