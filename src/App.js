@@ -12,6 +12,7 @@ import Dashboard from './components/Dashboard/Dashboard'
 import Home from './components/Home/Home'
 import PostExperience from './components/Forms/PostForm'
 import UserExperiences from './components/Rsvp/UserExperiences'
+import UserSharedExperiences from './components/SharedExperiences/UserSharedExperiences'
 import {
   Collapse,
   Navbar,
@@ -55,7 +56,10 @@ class App extends React.Component {
               {this.props.loggedIn ? 
              <div className="menu-bar">
              <NavItem>
-               <Link to='/user-page'>Your Bookings</Link>
+               <Link to='/user-page'>Booked</Link>
+             </NavItem>
+             <NavItem>
+               <Link to='/user-shared-experiences'>Shared</Link>
              </NavItem>
                <span>Signed In as <strong><em>{this.props.registeredUser.username}</em></strong></span>
              </div> : 
@@ -91,6 +95,10 @@ class App extends React.Component {
         <PrivateRoute
          exact path='/user-page'
          component={UserExperiences}
+        />
+        <PrivateRoute
+         exact path='/user-shared-experiences'
+         component={UserSharedExperiences}
         />
       </header>
     </div>

@@ -1,30 +1,26 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
-import {  getUserExperiences, register, login, getExperiences, postExperience, deleteExperience, updateExperience } from '../../actions/actions'
+import { userSharedExperiences, getUserExperiences, register, login, getExperiences, postExperience, deleteExperience, updateExperience } from '../../actions/actions'
 import { Jumbotron,  Alert, Card, Button, CardHeader, CardFooter, CardBody} from 'reactstrap'
 import './UserExperiences.css'
 import { ClipLoader } from 'react-spinners'
 
 
 
-class UserExperiences extends Component {
+class UserSharedExperiences extends Component {
  
 
   componentDidMount() {
-    if(this.props.registeredUser) {
-      this.props.getUserExperiences(this.props.registeredUser.id)
-    } else if (this.props.loggedInUser) {
-      this.props.getUserExperiences(this.props.loggedInUser.id)
-    }
+    this.props.userSharedExperiences(this.props.registeredUser.id)
   }
 
+  
 deleteExperience = id => {
    this.props.deleteExperience(id).then(() => {
     this.props.history.push('/dashboard');
   })
 }
-
 
 
   render() {
@@ -40,7 +36,9 @@ deleteExperience = id => {
       </div>
       );
     }
-   
+    console.log('PROPSSSSSSSSSSSSSSSS SAHRED:', this.props)
+    console.log('RRRRRRRRRRRRRRRRRR', this.props.registeredUser.id)
+    console.log('LLLLLLLLLLLLLLLL', this.props.loggedInUser.id)
      return(
       <div className="user-experiences-page">
 
@@ -48,7 +46,7 @@ deleteExperience = id => {
          <Jumbotron className='user-jumbotron'>
 
           <div className="cta">
-            <h1 id='user-page-cta-header'>Booked Experiences</h1>
+            <h1 id='user-page-cta-header'>Shared Experiences</h1>
             <hr className="my-2"/>
             <div className='user-page-cta-buttons'>
              <Button className='btn-share-user' outline color="primary"><Link to='/dashboard'>All Experiences</Link></Button>
@@ -61,10 +59,8 @@ deleteExperience = id => {
           </div>
          </Jumbotron>
         </div>
-       
-          
           <div className='user-experiences-card-wrapper'>
-             {this.props.userExperiences.map(exp => {
+             {this.props.sharedExperiences.map(exp => {
                return (
                 <div className="experiences-card" key={exp.id}>
                 <Card>
@@ -84,6 +80,7 @@ deleteExperience = id => {
               </div>
                )
              })}
+     
          </div>
        </div> 
          )      
@@ -91,7 +88,10 @@ deleteExperience = id => {
       }
 
 const mapStateToProps = state => {
+  console.log('STATE from USER SHARED:', state)
   return {
+    sharedExperiences: state.sharedExperiences,
+
     loggedInUser: state.loggedInUser,
     registeredUser: state.registeredUser,
     userExperiences: state.userExperiences,
@@ -115,8 +115,8 @@ const mapStateToProps = state => {
 export default withRouter (
  connect (
    mapStateToProps,
-   { getUserExperiences, register, login, getExperiences, postExperience, deleteExperience, updateExperience }
- ) (UserExperiences)
+   { userSharedExperiences, getUserExperiences, register, login, getExperiences, postExperience, deleteExperience, updateExperience }
+ ) (UserSharedExperiences)
 )
 
 
