@@ -35,6 +35,10 @@
 
 
 @media(max-width: 550px){
+  .user-jumbotron {
+    height: 220px;
+  }
+
   #user-page-cta-header {
     font-size: 2rem;
   }
