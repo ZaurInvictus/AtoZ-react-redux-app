@@ -49,7 +49,6 @@ class App extends React.Component {
           <Link to='/'>
             <i className="fas fa-city"></i>
               <span className="brand">ATOZ</span>
-            <span>{this.props.registeredUser && <span>User Id: <strong><em>{this.props.registeredUser.id}</em></strong></span>}</span>
           </Link>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>

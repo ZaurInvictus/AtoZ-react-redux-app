@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom'
 import { register, login, getExperiences, postExperience, deleteExperience, updateExperience, rsvpExperience } from '../../actions/actions'
 import UpdateForm  from '../Forms/UpdateForm'
 import './Dashboard.css'
-import {Jumbotron,  Alert,  Card, Button, CardHeader, CardFooter, CardBody} from 'reactstrap';
+import { Jumbotron,  Alert,  Card, Button, CardHeader, CardFooter, CardBody } from 'reactstrap';
 import { ClipLoader } from 'react-spinners'
 
 
@@ -49,10 +49,18 @@ editExperience = (e, experience) => {
   };
 
 
-  
+  rsvp = (expId) => {
+    const creds = {
+      user_id: this.props.registeredUser.id, 
+      experience_id: expId
+    }
+      this.props.rsvpExperience(creds)
+   }
+
 
 
   render() {
+    console.log('SSSSSSSSSSS', this.state.userId)
     if (this.props.fetchingExperiences) {
       return (
         <div className='sweet-loading'>
@@ -108,19 +116,24 @@ editExperience = (e, experience) => {
           }
           return (
             <div className="experiences-card" key={exp.id}>
+
                 <Card>
                   <CardHeader className='card-header' tag="h4">
                     {exp.title}
                   </CardHeader>
-                   <Button outline color="info" size="sm" id='rsvp-btn'>
-                      <Link to='/rsvp'>Rsvp</Link>
+                   <Button 
+                     outline color="info" 
+                     size="sm" 
+                     id='rsvp-btn'
+                     onClick={() => this.rsvp(exp.id)}
+                    >
+                     Book
                     </Button>
                   <CardBody className='card-body'>
                      <p><strong>Location:</strong>{exp.location}</p>
                      <p><strong>Date:</strong>{exp.date}</p>
                      <p><strong>Price:</strong>{exp.price}</p>
                      <p><strong>Description:</strong>{exp.description}</p>
-                     <p><strong>Id:</strong>{exp.id}</p>
                   </CardBody>
                   <CardFooter className="text-muted">
                     <div className="card-footer">
@@ -129,6 +142,7 @@ editExperience = (e, experience) => {
                     </div>
                   </CardFooter>
                </Card>
+
             </div>
            );
          })
@@ -151,15 +165,19 @@ editExperience = (e, experience) => {
                   <CardHeader className='card-header' tag="h4">
                     {exp.title}
                   </CardHeader>
-                    <Button outline color="info" size="sm" id='rsvp-btn'>
-                      <Link to='/rsvp'>Rsvp</Link>
+                   <Button 
+                     outline color="info" 
+                     size="sm" 
+                     id='rsvp-btn'
+                     onClick={() => this.rsvp(exp.id)}
+                    >
+                     Book
                     </Button>
                   <CardBody>
                      <p><strong>Location:</strong>{exp.location}</p>
                      <p><strong>Date:</strong>{exp.date}</p>
                      <p><strong>Price:</strong>{exp.price}</p>
                      <p><strong>Description:</strong>{exp.description}</p>
-                     <p><strong>Id:</strong>{exp.id}</p>
                   </CardBody>
                   <CardFooter className="text-muted">
                     <div className="card-footer">
@@ -180,6 +198,7 @@ editExperience = (e, experience) => {
 
 const mapStateToProps = state => {
   return {
+    registeredUser: state.registeredUser,
     loggedInUser: state.loggedInUser,
     loggedIn: state.loggedIn,
     

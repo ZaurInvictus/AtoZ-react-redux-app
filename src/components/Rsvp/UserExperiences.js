@@ -11,7 +11,6 @@ import { ClipLoader } from 'react-spinners'
 class UserExperiences extends Component {
  
 
-
   componentDidMount() {
     if(this.props.registeredUser) {
       this.props.getUserExperiences(this.props.registeredUser.id)
