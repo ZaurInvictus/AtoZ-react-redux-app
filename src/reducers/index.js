@@ -296,7 +296,8 @@ export const reducer = (state = initialState, action) => {
                  case GET_USER_SHARED_ERROR:
                   return {
                     ...state,
-  
+                    sharedExperiences: [],
+                    registerMessage: '', 
                   };
 
          default:
