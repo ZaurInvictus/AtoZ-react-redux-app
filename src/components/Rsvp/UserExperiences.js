@@ -52,7 +52,6 @@ deleteExperience = id => {
             <hr className="my-2"/>
             <div className='user-page-cta-buttons'>
              <Button className='btn-share-user' outline color="primary"><Link to='/dashboard'>Find Experience</Link></Button>
-             <Button className='btn-share-user' outline ><Link to='/rsvp'>Rsvp Experience</Link></Button>
             </div>
            </div>
 
